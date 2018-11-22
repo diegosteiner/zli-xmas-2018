@@ -23,11 +23,27 @@
     <img class="map" src="./assets/karte_2_zu_1.png">
     <div class="places">
       <button style="left: 40%; top: 30%;" onclick="javascript:show(this);" data-target="#modal"><img src="assets/icon_japan.png"></button>
-
+      <button style="left: 85%; top: 75%;" onclick="javascript:show(this);" data-target="#modal-australia"><img src="assets/icon_australien.png"></button>
     </div>
   </main>
   <footer>
+    Weihnachtsgruss 2018&nbsp;&nbsp;|&nbsp;&nbsp;&copy; Zürcher Lehrbetriebsverband ICT &nbsp;&nbsp;|&nbsp;&nbsp;<a href="">Kontakt</a> &nbsp;&nbsp;|&nbsp;&nbsp;<a href="">Impressum</a>
   </footer>
+
+<?php foreach (scandir('countries/') as $file): ?>
+  <?php
+$contents = [];
+$country = explode('.', $file)[0];
+if (!preg_match("/\w+\.html/", $file)) {continue;}
+preg_match("/<body class=\"modal\">\n(.*)\n<\/body>/sm", file_get_contents("countries/$file"), $contents);
+?>
+  <div id='modal-<?=$country?>' class="modal-wrapper close">
+    <div class="modal">
+      <button class="modal-close close">×</button>
+      <?=$contents[1]?>
+    </div>
+  </div>
+<?endforeach;?>
 
   <div id='modal' class="modal-wrapper close">
     <div class="modal">
@@ -50,6 +66,7 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
       </div>
+      <hr>
       <div class="container">
         <div class='col two-thirds'>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
