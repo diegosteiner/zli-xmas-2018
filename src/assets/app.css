@@ -5,6 +5,8 @@
 	transition: all .1s ease-in;
 }
 
+textarea, select, input, button { outline: none; }
+
 body {
   background-image: url('bg.jpg');
   background-size: 100%;
