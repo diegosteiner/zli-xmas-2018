@@ -22,8 +22,8 @@
   <main>
     <img class="map" src="./assets/karte_2_zu_1.png">
     <div class="places">
-      <button style="left: 40%; top: 30%;" onclick="javascript:show(this);" data-target="#modal"><img src="assets/icon_japan.png"></button>
-      <button style="left: 85%; top: 75%;" onclick="javascript:show(this);" data-target="#modal-australia"><img src="assets/icon_australien.png"></button>
+      <button style="left: 40%; top: 30%;" onclick="javascript:show(this);" data-target="#modal"><img src="assets/icons/icon_japan.png"></button>
+      <button style="left: 85%; top: 75%;" onclick="javascript:show(this);" data-target="#modal-australia"><img src="assets/icons/icon_australien.png"></button>
     </div>
   </main>
   <footer>
