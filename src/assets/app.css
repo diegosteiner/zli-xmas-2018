@@ -25,6 +25,7 @@ body {
 img {
   width: 100%;
   display: block;
+  cursor: pointer;
 }
 
 body > main {
@@ -67,6 +68,12 @@ body > footer, body > footer a {
 
 }
 
+body > footer {
+z-index: 10;
+position: relative;
+}
+
+
 .modal-wrapper {
   width: 100%;
   height: 100%;
@@ -77,6 +84,7 @@ body > footer, body > footer a {
   /* background:	rgba(0, 0, 0, 0.7); */
   display: none;
   overflow-y: auto;
+  z-index: 15;
 }
 
 .modal {
@@ -154,10 +162,18 @@ p {
   position: absolute;
   width: 8%;
   cursor: pointer;
-   background: transparent;
-    border: none !important;
-    font-size:0;
+  background: transparent;
+  border: none !important;
+  font-size:0;
+  z-index: 10;
+  transition: all 0.3s ease 0s;
+  transform: scale(1, 1);
 }
+
+.places button:hover {
+  transform: scale(1.2, 1.2);
+}
+
 
 .sticky-note {
   box-shadow: 10px 10px 0 rgba(0,0,0,0.3);
@@ -208,9 +224,40 @@ p {
 
   .modal-wrapper {
     padding: 30px;
+    z-index: 15;
   }
 
   .modal {
     padding: 30px;
   }
+}
+
+.snow {
+	z-index:5;
+
+	background-image: url('s1.png'), url('s2.png'), url('s3.png');
+  width: 98vw;
+  height: 100%;
+	margin: -50px auto;
+	padding: 0px auto;
+	position: absolute;
+	-webkit-animation: snow 10s linear infinite;
+	-moz-animation: snow 10s linear infinite;
+	-ms-animation: snow 10s linear infinite;
+	animation: snow 10s linear infinite;
+}
+@keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+@-moz-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 400px 1000px, 200px 400px, 100px 300px;}
+}
+@-webkit-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
 }
