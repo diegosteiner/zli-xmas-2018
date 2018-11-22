@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+	box-sizing: border-box;
+	transition: all .1s ease-in;
+}
+
+body {
+  background-image: url('bg.jpg');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 60px;
+  position: relative;
+  overflow: auto;
+  font-size: 1em;
+  font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing: 0.025em;
+  line-height: 1.5em;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+body > main {
+  margin: 0 auto;
+  max-width: 800px;
+  position: relative;
+}
+
+body > header {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+body > header .title {
+  flex: 1 1;
+  padding-right: 3rem;
+  margin-bottom: 2rem;
+}
+
+body > header .title h1 {
+  color: #e4c856;
+  font-size: 1.8rem;
+}
+
+body > header .logo {
+  flex: 200px 0;
+  max-width: 400px;
+  margin: .2rem auto 2rem auto;
+  display: block;
+}
+
+.modal-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 60px;
+  /* background:	rgba(0, 0, 0, 0.7); */
+  display: none;
+  overflow-y: auto;
+}
+
+.modal {
+  min-width: 300px;
+  position: relative;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: .5rem;
+  padding: 2rem;
+}
+
+button.modal-close {
+  border: none;
+  background: transparent;
+  padding: .5rem 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2rem;
+}
+
+hr {
+  margin: 1rem 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-evenly; */
+  margin: 0 -1rem;
+}
+
+.col {
+  margin: 1rem;
+}
+
+.container .col.one-half {
+  flex: 50% 1;
+  background: red;
+}
+
+.container .col.one-third {
+  flex: 33% 1;
+  background: yellow;
+}
+
+.container .col.two-thirds {
+  flex: 66% 1;
+  background: orange;
+}
+
+h1 {
+  /* font-family: 'Fredoka One', cursive; */
+  font-family: 'Concert One', cursive;
+  /* font-weight: normal; */
+  margin-top: 0;
+  letter-spacing: 0.025em;
+  line-height: 1.25em;
+}
+
+.places {
+  position: absolute;
+  border: 1px solid yellow;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.places button {
+  position: absolute;
+  width: 8%;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    display: block;
+  }
+
+  main header {
+    display: block;
+  }
+}
