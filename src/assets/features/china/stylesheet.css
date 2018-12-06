@@ -1,0 +1,62 @@
+body	{
+	font-family: calibri;
+	color: white;
+	cursor: url(cursor.ani);
+	background-image: url(weihnachten);
+}
+
+header	{
+	background-color: #86B404;
+	text-align: center;
+	font-size: 100px;
+	letter-spacing: 15pt;
+}
+
+#box1	{
+	background-color: #D8F781;
+	height: 380px;
+	color: black;
+	width: 60%;
+	float: left;
+	overflow: hidden;
+}
+
+#box2	{
+	background-color: #D0FA58;
+	height: 250px;
+	color: black;
+	width: 30%;
+	float: right;
+}
+
+h1	{
+	text-align: center
+}
+
+
+a	{
+	color: #31B404;
+	cursor: pointer;
+}
+
+nav	{
+	text-align: center;
+	text-decoration: none;
+	font-size: 18pt;
+	word-spacing: 15pt;
+}
+
+#wrapper{
+	width: 80vw;
+	height: auto;
+	max-width: 1200px;
+	min-width: 790px;
+	margin: auto;
+}
+
+footer	{
+	text-align: center;
+	float: left;
+	width: 100%;
+	margin-top: 35px;
+}

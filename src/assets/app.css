@@ -12,7 +12,6 @@ body {
   background-size: 100%;
   background-repeat: repeat-y;
   margin: 0;
-  padding: 60px;
   position: relative;
   overflow: auto;
   font-size: 1em;
@@ -34,9 +33,13 @@ body > main {
   position: relative;
 }
 
-body > header {
+body > header > .flex {
   display: flex;
   flex-direction: row-reverse;
+}
+
+body > header {
+  padding: 60px 60px 0 60px;
 }
 
 body > header .title {
@@ -71,6 +74,7 @@ body > footer, body > footer a {
 body > footer {
 z-index: 10;
 position: relative;
+padding:2.5vw 0;
 }
 
 
@@ -90,10 +94,10 @@ position: relative;
 .modal {
   min-width: 300px;
   position: relative;
-  margin: 0 auto;
+  margin: 0 auto 40px auto;
   background: #fff;
   border-radius: .5rem;
-  padding: 60px;
+  padding: 60px 60px 10px 60px;
 }
 
 button.modal-close {
@@ -107,7 +111,11 @@ button.modal-close {
 }
 
 hr {
-  margin: 1rem 0;
+  margin: 10px 0 30px 0;
+  border: 0;
+  height: 1px;
+  background-color: #A9A9A9;
+  width: 100%;
 }
 
 .container {
@@ -118,7 +126,11 @@ hr {
 }
 
 .col {
-  margin: 0 30px 2rem 30px;
+  margin: 0 30px 50px 30px;
+}
+
+.container .col.one-all {
+  flex: 100% 1;
 }
 
 .container .col.one-half {
@@ -143,7 +155,7 @@ h1 {
 }
 
 h2 {
-  margin: 0 0 1em 0;
+  margin: 1.5em 0 1.25em 0;
 }
 
 p {
@@ -158,7 +170,7 @@ p {
   left: 0;
 }
 
-.places button {
+button.open-modal {
   position: absolute;
   width: 8%;
   cursor: pointer;
@@ -171,7 +183,8 @@ p {
 }
 
 .places button:hover {
-  transform: scale(1.2, 1.2);
+  transform: scale(2.15, 2.15);
+  z-index: 14;
 }
 
 
@@ -194,15 +207,19 @@ p {
 .sticky-note .flag {
   position: absolute;
   top: 2rem;
-  right: 2rem;
+  right: 1rem;
   width: 50px;
-  transform:rotate(4deg);
+  transform:rotate(6deg);
 }
 
 .sticky-note h3 {
   font-family: 'Rye';
+  margin: 10px 0 0 0;
   font-size: 1.5em;
   margin-bottom: 1em;
+}
+.sticky-note p {
+  margin: 0 0 5px 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -211,15 +228,23 @@ p {
   }
 
   body {
-    padding: 30px;
   }
 
   body > header {
-    display: block;
+    padding: 30px 30px 0 30px;
+  }
+
+  body > header .flex {
+
+      display: block;
   }
 
   body > main {
     margin: 0 -30px;
+  }
+
+  hr {
+    margin: 30px 0 30px 0;
   }
 
   .modal-wrapper {
@@ -228,8 +253,29 @@ p {
   }
 
   .modal {
-    padding: 30px;
+    padding: 30px 30px 10px 30px;
   }
+  .col {
+    margin: 0 30px 20px 30px;
+  }
+}
+
+.reindeer {
+  position: absolute;
+  animation: fly;
+  animation-duration: 20s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+  animation-delay: 3s;
+  z-index: 35;
+}
+
+@keyframes fly {
+  0% { right: -100%; top: 75%; transform: scale(1);}
+  20% { right: 65%; top: 23%; transform: scale(1.3); }
+  40% { right: 65%; top: 23%; transform: scale(1.3); }
+  50% { right: 100%; top: 50%; transform: scale(1);}
+  100% { right: 100%; top: 60%; transform: scale(1);}
 }
 
 .snow {
@@ -238,7 +284,7 @@ p {
 	background-image: url('s1.png'), url('s2.png'), url('s3.png');
   width: 98vw;
   height: 100%;
-	margin: -50px auto;
+	margin: 0;
 	padding: 0px auto;
 	position: absolute;
 	-webkit-animation: snow 10s linear infinite;
