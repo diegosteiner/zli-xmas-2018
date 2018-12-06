@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rm -rf dist/*
+php src/index.php > dist/index.html
+cp -r src/assets dist/assets

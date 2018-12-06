@@ -22,7 +22,7 @@
       </div>
     </div>
   </header>
-  <main>
+  <div id="main">
     <div>
       <img class="map" src="./assets/karte_2_zu_1.png">
       <div class="places">
@@ -48,19 +48,19 @@
         <button style="left: 56.5%; top: 45%;" class="open-modal" data-target="#modal-saudiarabien"><img src="assets/icons/icon_saudiarabien.png"></button>
       </div>
     </div>
-  </main>
+  </div>
   <footer>
     Weihnachtsgruss 2018&nbsp;&nbsp;|&nbsp;&nbsp;&copy; Zürcher Lehrbetriebsverband ICT &nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.zli.ch/service/kontakt" target="_blank">Kontakt</a>
     <button style="right: 0; bottom: 0; width: 7vw; position: absolute;" class="open-modal impressum" data-target="#modal-impressum"><img src="assets/elch.png"></button>
   </footer>
   <button style="width:28vw" class="reindeer open-modal" data-target="#modal-video"><img src="assets/rentier.png" ></button>
 
-<?php foreach (scandir('countries/') as $file): ?>
+<?php foreach (scandir(__DIR__ . '/countries/') as $file): ?>
   <?php
 $contents = [];
 $country = explode('.', $file)[0];
 if (!preg_match("/\w+\.html/", $file)) {continue;}
-preg_match("/<body class=\"modal\">\n(.*)\n<\/body>/sm", file_get_contents("countries/$file"), $contents);
+preg_match("/<body class=\"modal\">\n(.*)\n<\/body>/sm", file_get_contents(__DIR__ . "/countries/$file"), $contents);
 ?>
   <div id='modal-<?=$country?>' class="modal-wrapper close">
     <div class="modal">
@@ -75,29 +75,30 @@ preg_match("/<body class=\"modal\">\n(.*)\n<\/body>/sm", file_get_contents("coun
     var closeTriggers = document.getElementsByClassName('close');
     var openTriggers = document.querySelectorAll('button.open-modal');
 
-    Array.from(openTriggers).forEach(function(t) {
+    [].slice.call(openTriggers).forEach(function(t) {
       t.addEventListener('click', function() {
         let targetSelector = t.dataset["target"];
         let targets = document.querySelectorAll(targetSelector);
 
-        Array.from(targets).forEach(function(target) {
+        [].slice.call(targets).forEach(function(target) {
           target.style.display='block'
         });
        })
-    })
-    Array.from(closeTriggers).forEach(function(t) {
+    });
+
+    [].slice.call(closeTriggers).forEach(function(t) {
       t.addEventListener('click', function(e) {
       if (e.target == this)
         hide();
       })
-    })
+    });
 
     document.addEventListener('keydown', function(e) {
         if(e.code == "Escape") { hide(); }
     });
 
     function hide() {
-      Array.from(modalWrappers).forEach(function(m) {
+      [].slice.call(modalWrappers).forEach(function(m) {
         m.style.display='none';
       })
     }
